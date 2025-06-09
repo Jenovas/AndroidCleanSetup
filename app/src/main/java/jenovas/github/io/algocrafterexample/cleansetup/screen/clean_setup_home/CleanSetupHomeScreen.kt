@@ -1,4 +1,4 @@
-package jenovas.github.io.algocrafterexample.ui.screen.home
+package jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,52 +25,52 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import jenovas.github.io.algocrafterexample.ui.navigation.CleanSetupNoEffects
-import jenovas.github.io.algocrafterexample.ui.navigation.CleanSetupWithEffects
+import jenovas.github.io.algocrafterexample.cleansetup.navigation.CleanSetupNoEffects
+import jenovas.github.io.algocrafterexample.cleansetup.navigation.CleanSetupWithEffects
 import jenovas.github.io.algocrafterexample.ui.theme.AlgoCrafterExampleTheme
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun HomeScreen(
+fun CleanSetupHomeScreen(
     navController: NavHostController,
 ) {
-    val viewModel = koinViewModel<HomeScreenViewModel>()
+    val viewModel = koinViewModel<CleanSetupHomeScreenViewModel>()
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(state.navTarget) {
         state.navTarget.let { target ->
             when (target) {
-                HomeScreenNavTarget.None -> Unit
-                HomeScreenNavTarget.Back -> navController.navigateUp()
-                HomeScreenNavTarget.CleanSetupNoEffects -> navController.navigate(
+                CleanSetupHomeScreenNavTarget.None -> Unit
+                CleanSetupHomeScreenNavTarget.Back -> navController.navigateUp()
+                CleanSetupHomeScreenNavTarget.CleanSetupNoEffects -> navController.navigate(
                     CleanSetupNoEffects
                 )
 
-                HomeScreenNavTarget.CleanSetupWithEffects -> navController.navigate(
+                CleanSetupHomeScreenNavTarget.CleanSetupWithEffects -> navController.navigate(
                     CleanSetupWithEffects
                 )
             }
-            viewModel.handleEvent(HomeScreenEvent.NavigationHandled)
+            viewModel.handleEvent(CleanSetupHomeScreenEvent.NavigationHandled)
         }
     }
 
-    HomeScreenContent(
+    CleanSetupHomeScreenContent(
         state.contentState,
         viewModel::handleEvent
     )
 }
 
 @Composable
-fun HomeScreenContent(
-    contentState: HomeScreenContentState,
-    event: (HomeScreenEvent) -> Unit,
+fun CleanSetupHomeScreenContent(
+    contentState: CleanSetupHomeScreenContentState,
+    event: (CleanSetupHomeScreenEvent) -> Unit,
 ) {
     Scaffold(
         topBar = {
-            HomeTopBar()
+            CleanSetupHomeTopBar()
         }
     ) { paddingValues ->
-        HomeScreenContentBox(
+        CleanSetupHomeScreenContentBox(
             modifier = Modifier
                 .padding(paddingValues),
             event = event
@@ -79,9 +79,9 @@ fun HomeScreenContent(
 }
 
 @Composable
-fun HomeScreenContentBox(
+fun CleanSetupHomeScreenContentBox(
     modifier: Modifier,
-    event: (HomeScreenEvent) -> Unit,
+    event: (CleanSetupHomeScreenEvent) -> Unit,
 ) {
     Box(
         modifier = modifier
@@ -113,7 +113,7 @@ fun HomeScreenContentBox(
             Spacer(modifier = Modifier.height(32.dp))
 
             Button(
-                onClick = { event(HomeScreenEvent.NavigateToCleanSetupNoEffects) },
+                onClick = { event(CleanSetupHomeScreenEvent.NavigateToCleanSetupNoEffects) },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
@@ -123,7 +123,7 @@ fun HomeScreenContentBox(
             }
 
             Button(
-                onClick = { event(HomeScreenEvent.NavigateToCleanSetupWithEffects) },
+                onClick = { event(CleanSetupHomeScreenEvent.NavigateToCleanSetupWithEffects) },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
@@ -137,7 +137,7 @@ fun HomeScreenContentBox(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun HomeTopBar() {
+private fun CleanSetupHomeTopBar() {
     TopAppBar(
         title = { Text("AlgoCrafter") },
         colors = TopAppBarDefaults.topAppBarColors(
@@ -151,9 +151,8 @@ private fun HomeTopBar() {
 @Composable
 fun HomeScreenPreview() {
     AlgoCrafterExampleTheme {
-        HomeScreenContent(
-            HomeScreenContentState(),
-            {},
-        )
+        CleanSetupHomeScreenContent(
+            CleanSetupHomeScreenContentState(),
+        ) {}
     }
 } 

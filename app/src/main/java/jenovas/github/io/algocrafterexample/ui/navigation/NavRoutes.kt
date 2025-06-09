@@ -3,10 +3,20 @@ package jenovas.github.io.algocrafterexample.ui.navigation
 import kotlinx.serialization.Serializable
 
 @Serializable
-object Home
+object Menu
+
+// Route for nested graph
+@Serializable
+object LegalScreens
 
 @Serializable
-object CleanSetupNoEffects
+object Legal
 
 @Serializable
-object CleanSetupWithEffects 
+object PrivacyPolicy
+
+@Serializable
+object TermsOfService
+
+@Serializable
+object AIDisclaimer

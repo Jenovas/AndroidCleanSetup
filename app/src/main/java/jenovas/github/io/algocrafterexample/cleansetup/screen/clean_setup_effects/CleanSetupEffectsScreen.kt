@@ -1,4 +1,4 @@
-package jenovas.github.io.algocrafterexample.ui.screen.clean_setup_effects
+package jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_effects
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,8 +32,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import jenovas.github.io.algocrafterexample.ui.navigation.Home
-import jenovas.github.io.algocrafterexample.ui.navigation.ObserveAsEvents
+import jenovas.github.io.algocrafterexample.cleansetup.navigation.CleanSetupHome
+import jenovas.github.io.algocrafterexample.cleansetup.navigation.ObserveAsEvents
 import jenovas.github.io.algocrafterexample.ui.theme.AlgoCrafterExampleTheme
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
@@ -48,7 +48,7 @@ fun CleanSetupEffectsScreen(
     ObserveAsEvents(viewModel.effects) { effect ->
         when (effect) {
             is CleanSetupEffect.NavigateBack -> navController.navigateUp()
-            is CleanSetupEffect.NavigateToHome -> navController.navigate(Home)
+            is CleanSetupEffect.NavigateToHome -> navController.navigate(CleanSetupHome)
             is CleanSetupEffect.ShowMessage -> {
                 scope.launch {
                     snackbarHostState.currentSnackbarData?.dismiss()

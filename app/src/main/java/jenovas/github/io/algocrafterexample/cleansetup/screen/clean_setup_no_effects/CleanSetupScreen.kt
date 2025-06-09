@@ -1,4 +1,4 @@
-package jenovas.github.io.algocrafterexample.ui.screen.clean_setup_no_effects
+package jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_no_effects
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,7 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import jenovas.github.io.algocrafterexample.ui.navigation.Home
+import jenovas.github.io.algocrafterexample.cleansetup.navigation.CleanSetupHome
 import jenovas.github.io.algocrafterexample.ui.theme.AlgoCrafterExampleTheme
 import org.koin.androidx.compose.koinViewModel
 
@@ -48,7 +48,7 @@ fun CleanSetupScreen(
             when (target) {
                 CleanSetupNavTarget.None -> Unit
                 CleanSetupNavTarget.Back -> navController.navigateUp()
-                CleanSetupNavTarget.Home -> navController.navigate(Home)
+                CleanSetupNavTarget.Home -> navController.navigate(CleanSetupHome)
             }
             viewModel.handleEvent(CleanSetupScreenEvent.NavigationHandled)
         }

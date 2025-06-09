@@ -1,4 +1,4 @@
-package jenovas.github.io.algocrafterexample.ui.screen.clean_setup_effects
+package jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_effects
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

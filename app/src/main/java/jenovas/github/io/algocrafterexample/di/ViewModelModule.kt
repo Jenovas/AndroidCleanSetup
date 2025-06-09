@@ -1,13 +1,17 @@
 package jenovas.github.io.algocrafterexample.di
 
-import jenovas.github.io.algocrafterexample.ui.screen.clean_setup_effects.CleanSetupEffectsViewModel
-import jenovas.github.io.algocrafterexample.ui.screen.clean_setup_no_effects.CleanSetupViewModel
-import jenovas.github.io.algocrafterexample.ui.screen.home.HomeScreenViewModel
+import jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_effects.CleanSetupEffectsViewModel
+import jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_home.CleanSetupHomeScreenViewModel
+import jenovas.github.io.algocrafterexample.cleansetup.screen.clean_setup_no_effects.CleanSetupViewModel
+import jenovas.github.io.algocrafterexample.ui.screens.legal.LegalViewModel
+import jenovas.github.io.algocrafterexample.ui.screens.menu.MenuViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModelOf(::CleanSetupViewModel)
     viewModelOf(::CleanSetupEffectsViewModel)
-    viewModelOf(::HomeScreenViewModel)
+    viewModelOf(::CleanSetupHomeScreenViewModel)
+    viewModelOf(::LegalViewModel)
+    viewModelOf(::MenuViewModel)
 }  

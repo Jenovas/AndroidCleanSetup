@@ -1,17 +1,17 @@
 [versions]
-agp = "8.9.0"
+agp = "8.10.1"
 kotlin = "2.0.21"
 ksp = "2.0.21-1.0.27"
 coreKtx = "1.16.0"
 
 # UI
 activityCompose = "1.10.1"
-composeBom = "2025.05.00"
+composeBom = "2025.06.00"
 iconsLucide = "1.0.0"
 navigationCompose = "2.9.0"
 
 # Lifecycle + ViewModel
-lifecycleRuntimeKtx = "2.9.0"
+lifecycleRuntimeKtx = "2.9.1"
 
 # Database
 roomVersion = "2.7.1"
@@ -26,8 +26,8 @@ ktorfit = "2.1.0"
 
 # Firebase
 googleGmsGoogleServices = "4.4.2"
-firebaseVersion = "33.13.0"
-firebase-crashlytics-gradle = "3.0.3"
+firebaseVersion = "33.15.0"
+firebase-crashlytics-gradle = "3.0.4"
 
 # Logging
 timber = "5.0.1"

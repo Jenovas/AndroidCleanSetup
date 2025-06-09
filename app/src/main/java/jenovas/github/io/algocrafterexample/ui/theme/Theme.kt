@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -22,12 +21,12 @@ enum class AppTheme(val displayName: String) {
 val LocalAppTheme = staticCompositionLocalOf { AppTheme.BLUE_DARK }
 
 private val BlueDarkColorScheme = darkColorScheme(
-    primary = DeepBlue,
-    onPrimary = Color.White,
-    primaryContainer = Color(0xFF0D47A1),
-    onPrimaryContainer = Color.White,
-    secondary = TealPrimary,
-    onSecondary = DarkOnPrimary,
+    primary = Primary,
+    onPrimary = OnPrimary,
+    primaryContainer = PrimaryContainer,
+    onPrimaryContainer = OnPrimaryContainer,
+    secondary = Secondary,
+    onSecondary = OnSecondary,
     background = DarkBackground,
     onBackground = DarkOnBackground,
     surface = DarkSurface,
