@@ -188,12 +188,12 @@ fun SharedButtonWithIcon(
     imageVector: ImageVector? = null,
     imageTint: Color = MaterialTheme.colorScheme.primary,
     colors: ButtonColors = ButtonDefaults.buttonColors(
-        containerColor = Color.White,
+        containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(8.dp),
         contentColor = MaterialTheme.colorScheme.primary
     ),
     elevation: ButtonElevation = ButtonDefaults.buttonElevation(
-        defaultElevation = 2.dp,
-        pressedElevation = 4.dp
+        defaultElevation = 1.dp,
+        pressedElevation = 3.dp
     ),
     onClick: () -> Unit,
 ) {

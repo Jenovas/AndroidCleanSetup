@@ -10,6 +10,7 @@ import jenovas.github.io.algocrafterexample.ui.screens.legal.sub.AIDisclaimerScr
 import jenovas.github.io.algocrafterexample.ui.screens.legal.sub.PrivacyPolicyScreen
 import jenovas.github.io.algocrafterexample.ui.screens.legal.sub.TermsOfServiceScreen
 import jenovas.github.io.algocrafterexample.ui.screens.menu.MenuScreen
+import jenovas.github.io.algocrafterexample.ui.screens.strategies.StrategiesScreen
 
 @Composable
 fun AppNavigation(
@@ -22,6 +23,10 @@ fun AppNavigation(
     ) {
         composable<Menu> {
             MenuScreen(navController)
+        }
+
+        composable<Strategies> {
+            StrategiesScreen(navController)
         }
 
         navigation<LegalScreens>(startDestination = Legal) {

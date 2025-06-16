@@ -18,7 +18,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -89,7 +88,7 @@ fun AIPremiumFeatureCard(
                     modifier = Modifier.weight(1f),
                     imageVector = Lucide.Lock,
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color.White,
+                        containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(8.dp),
                         contentColor = MaterialTheme.colorScheme.primary
                     ),
                     onClick = { onShowMessage("This feature requires a premium subscription.") }

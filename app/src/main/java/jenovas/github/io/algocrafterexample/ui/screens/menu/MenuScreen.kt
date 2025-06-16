@@ -125,7 +125,7 @@ private fun getMenuOptions(onEvent: (MenuScreenEvent) -> Unit): List<MenuOptionI
             icon = Lucide.ListOrdered,
             title = "My Strategies",
             subtitle = "View and manage strategies",
-            onClick = { onEvent(MenuScreenEvent.ShowMessage("My Strategies coming soon")) }
+            onClick = { onEvent(MenuScreenEvent.NavigateToStrategies) }
         ),
         MenuOptionItem(
             icon = Lucide.ChartBarBig,

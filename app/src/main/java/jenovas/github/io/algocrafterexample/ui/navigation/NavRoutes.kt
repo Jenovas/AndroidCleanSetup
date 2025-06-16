@@ -20,3 +20,6 @@ object TermsOfService
 
 @Serializable
 object AIDisclaimer
+
+@Serializable
+object Strategies

@@ -1,6 +1,7 @@
 package jenovas.github.io.algocrafterexample
 
 import android.app.Application
+import jenovas.github.io.algocrafterexample.di.domainModule
 import jenovas.github.io.algocrafterexample.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,6 +15,7 @@ class AlgoCrafterApplication : Application() {
             androidLogger(Level.ERROR)
             androidContext(this@AlgoCrafterApplication)
             modules(
+                domainModule,
                 viewModelModule,
             )
         }
